@@ -1,5 +1,13 @@
+
 <%= form_for(task) do |f| %>
   <%= f.text_field :title %>
   <%= f.text_field :details %>
+
+  <% if f.object.new_record?  %>
+    <%= "" %>
+  <%else  %>
+    <%= f.check_box :completed %>
+  <% end  %>
+
   <%= f.submit %>
 <% end %>
